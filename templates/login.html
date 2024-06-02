@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='styles/styles.css') }}"
+		/>
+		<title>Login</title>
+	</head>
+	<body>
+		<div class="container">
+			<div id="wrapper">
+				<form id="signin" method="POST" autocomplete="off">
+					<input
+						type="text"
+						id="new_username"
+						name="username"
+						placeholder="Логин"
+					/>
+					<input
+						type="password"
+						id="new_password"
+						name="password"
+						placeholder="Пароль"
+					/>
+					<button type="submit" name="register" value="register">
+						&#xf0da;
+					</button>
+					<p>Хочешь <a href="/register">зарегистрироваться</a>?</p>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

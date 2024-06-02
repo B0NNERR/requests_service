@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='styles/styles.css') }}"
+		/>
+		<title>Главная страница</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="hello">
+				<h1 class="main-header">Привет, {{ username }}</h1>
+				<a href="/logout" class="logout">Выход</a>
+			</div>
+		</div>
+		<header>
+			<h1>Сервис запросов</h1>
+			<nav>
+				<div class="container">
+					<a class="main-link" href="{{ url_for('add_request') }}"
+						>Добавить запись</a
+					>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section class="add">
+				<div class="container">{% block content %}{% endblock %}</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2>Все записи</h2>
+					<table class="rounded">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Request</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for request in requests %}
+							<tr>
+								<td>{{ request[0] }}</td>
+								<td>{{ request[1] }}</td>
+								<td>{{ request[2] }}</td>
+								<td>{{ request[3] }}</td>
+								<td>{{ request[4] }}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

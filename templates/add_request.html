@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='styles/styles.css') }}"
+		/>
+	</head>
+	<body>
+		<main>
+			<section>
+				<div class="container">
+					<h2 class="add-title">Добавить новую запись</h2>
+					<form class="add-form" method="POST">
+						<div class="add-input-wrapper">
+							<label for="request">Request:</label>
+							<textarea
+								id="request"
+								name="request"
+								required
+							></textarea>
+						</div>
+						<div class="add-input-wrapper">
+							<label for="email">Email:</label>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								required
+							/>
+						</div>
+						<div class="add-btn-wrapper">
+							<button type="submit" class="add-btn">
+								Создать
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
