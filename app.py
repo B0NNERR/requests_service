@@ -58,7 +58,7 @@ def get_all_requests():
     conn.close()
     return requests
 
-# Основная страница для отображения всех учетных записей и формы для добавления новой учетной записи
+# Основная страница
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if 'username' in session:
@@ -88,6 +88,7 @@ def check_credentials(username, password):
     conn.close()
     return employee is not None
 
+# Функция регистрации пользователя
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -104,6 +105,7 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('login'))
 
+# Форма добавления записи в БД requests
 @app.route('/add', methods=['GET', 'POST'])
 def add_request():
     if request.method == 'POST':

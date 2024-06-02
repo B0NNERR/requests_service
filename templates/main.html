@@ -12,17 +12,19 @@
 	<body>
 		<div class="container">
 			<div class="hello">
-				<h1 class="main-header">Привет, {{ username }}</h1>
+				<h1 class="main-header">Пользователь: {{ username }}</h1>
 				<a href="/logout" class="logout">Выход</a>
 			</div>
 		</div>
 		<header>
-			<h1>Сервис запросов</h1>
+			<h2 class="subtitle"><span>Сервис запросов</span></h2>
 			<nav>
 				<div class="container">
-					<a class="main-link" href="{{ url_for('add_request') }}"
-						>Добавить запись</a
-					>
+					<div class="link-container">
+						<a class="main-link" href="{{ url_for('add_request') }}"
+							>Добавить запись</a
+						>
+					</div>
 				</div>
 			</nav>
 		</header>
